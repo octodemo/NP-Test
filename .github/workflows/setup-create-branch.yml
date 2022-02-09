@@ -1,0 +1,37 @@
+name: Setup - Create Vulnerable Branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch-name:
+        required: true
+        default: 'Feature-Vulnerable-JS'
+jobs:
+  act-on-issue:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: peterjgrainger/action-create-branch@v2.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        branch: ${{github.event.inputs.branch-name}}
+
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{github.event.inputs.branch-name}}
+
+    - run: |
+        echo "Move content over"
+        pwd
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        ls
+        rm index.js
+        ls
+        mv $PWD/Feature-Vulnerable-Content/* $PWD/.
+        for f in *.txt; do 
+            mv -- "$f" "${f%.txt}.js"
+        done
+        git add .
+        git commit -m "Adding JS Vulnerability Files"
+        git push

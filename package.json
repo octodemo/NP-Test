@@ -1,0 +1,26 @@
+{
+  "name": "github-devsecops",
+  "version": "1.0.0",
+  "description": "Welcome to the Code Scanning Javascript Tutorial! This tutorial will take you through how to set up Github Advanced Security: Code Scanning as well as interpret results that it may find. The following repository contains vulnerability [CVE-2018-20835](https://github.com/advisories/GHSA-x2mc-8fgj-3wmr) (aka Zip Slip) that was found by the [GitHub Security Lab](https://securitylab.github.com/).",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octodemo/GitHub-DevSecOps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octodemo/GitHub-DevSecOps/issues"
+  },
+  "homepage": "https://github.com/octodemo/GitHub-DevSecOps#readme",
+  "dependencies": {
+    "acorn": "^5.7.3",
+    "websocket-extensions": "^0.1.3"
+  }
+}
