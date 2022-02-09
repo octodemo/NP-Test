@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/octodemo/GitHub-DevSecOps#readme",
   "dependencies": {
-    "acorn": "^5.7.3",
+    "acorn": "^5.7.4",
     "websocket-extensions": "^0.1.3"
   }
 }
